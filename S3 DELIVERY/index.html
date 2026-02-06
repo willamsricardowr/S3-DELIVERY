@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+<link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>S3 Delivery — Teresina</title>
+
+  <meta name="description" content="Delivery discreto em Teresina. Pedido seguro, embalagem neutra e entrega rápida. Exclusivo via iFood." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- CSS externo (sem style inline) -->
+  <link rel="stylesheet" href="css/landing-s3.css?v=3">
+  <style>
+/* COLE AQUI O CSS TODO */
+/* RESET */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+:root{
+  --bg: #0b0b10;
+  --panel: rgba(255,255,255,.05);
+  --border: rgba(255,255,255,.12);
+  --text: #f2f3f5;
+  --muted: rgba(242,243,245,.72);
+
+  --ifood: #ef4444;
+  --ifoodGlow: rgba(239,68,68,.38);
+
+  --whats: #22c55e;
+  --whatsGlow: rgba(34,197,94,.25);
+
+  --radius: 22px;
+  --shadow: 0 30px 80px rgba(0,0,0,.65);
+}
+
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  background:
+    radial-gradient(900px 520px at 18% 12%, rgba(239,68,68,.18), transparent 60%),
+    radial-gradient(800px 460px at 82% 18%, rgba(34,197,94,.14), transparent 60%),
+    radial-gradient(700px 420px at 50% 80%, rgba(255,255,255,.05), transparent 65%),
+    var(--bg);
+}
+
+/* centralização */
+.wrap{
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 26px;
+}
+
+/* CARD (mais “premium”) */
+.card{
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  z-index:-1;
+  background:
+    radial-gradient(closest-side at 30% 30%, rgba(239,68,68,.12), transparent 70%),
+    radial-gradient(closest-side at 75% 35%, rgba(34,197,94,.09), transparent 72%);
+  filter: blur(2px);
+}
+
+/* BRAND */
+.brand{
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.mark{
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  letter-spacing: .5px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.brand-top{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-name{
+  font-size: 14px;
+  letter-spacing: .18em;
+}
+
+.badge{
+  font-size: 11px;
+  color: rgba(242,243,245,.65);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+}
+
+.brand-sub{
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* TITULOS */
+.title{
+  margin-top: 10px;
+  font-size: clamp(26px, 4.5vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.6px;
+}
+
+.soft{
+  color: rgba(242,243,245,.85);
+}
+
+.sub{
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* CTA */
+.cta{
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .18s ease, filter .18s ease, background .18s ease;
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.btn:hover{ transform: translateY(-1px); }
+
+.btn-primary{
+  border: none;
+  background: linear-gradient(180deg, var(--ifood), #d93838);
+  box-shadow: 0 18px 45px var(--ifoodGlow);
+  color: #fff;
+}
+
+.btn-whats{
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  color: rgba(242,243,245,.85);
+}
+
+.btn-whats:hover{
+  border-color: rgba(34,197,94,.35);
+  filter: drop-shadow(0 10px 18px var(--whatsGlow));
+}
+
+/* PROVAS */
+.proof{
+  margin-top: 16px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: rgba(242,243,245,.62);
+  font-size: 12px;
+}
+
+.foot{
+  margin-top: 14px;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(242,243,245,.45);
+}
+
+/* Mobile */
+@media (max-width: 480px){
+  .card{ padding: 22px; }
+  .brand{ grid-template-columns: 42px 1fr; }
+  .mark{ width: 42px; height: 42px; border-radius: 14px; }
+}
+
+</style>
+
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="S3 Delivery">
+
+      <header class="brand">
+        <!-- opcional: coloque sua logo -->
+        <div class="mark">
+  <img src="./images/favicon-32x32.png" alt="S3 Delivery" class="mark-img">
+</div>
+
+
+        <div class="brand-text">
+          <div class="brand-top">
+            <strong class="brand-name">S3 DELIVERY</strong>
+            <span class="badge">Teresina • Exclusivo iFood</span>
+          </div>
+          <p class="brand-sub">Delivery discreto, simples e direto.</p>
+        </div>
+      </header>
+
+      <h1 class="title">
+        Discrição na entrega.<br>
+        <span class="soft">Segurança no pedido.</span>
+      </h1>
+
+      <p class="sub">
+        Embalagem neutra e atendimento rápido.
+        Compra direta pelo iFood.
+      </p>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="SEU_LINK_IFOOD" target="_blank" rel="noopener">
+          Pedir agora no iFood
+        </a>
+
+        <a class="btn btn-whats" href="https://wa.me/55DDDNSEUNUMERO" target="_blank" rel="noopener">
+          Falar no WhatsApp
+        </a>
+      </div>
+
+      <div class="proof" role="list" aria-label="Benefícios">
+        <span role="listitem">📦 Embalagem discreta</span>
+        <span role="listitem">🔒 Pedido seguro</span>
+        <span role="listitem">⚡ Entrega rápida</span>
+      </div>
+
+      <p class="foot">+18 • S3 Delivery</p>
+    </section>
+  </main>
+</body>
+</html>
